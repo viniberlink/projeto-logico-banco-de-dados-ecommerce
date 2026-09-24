@@ -324,6 +324,7 @@ Para responder essa pergunta, foi utilizado o `SELECT` para recuperar as informa
 ```sql
 SELECT * FROM product;
 ```
+<img width="920" height="230" alt="1" src="https://github.com/user-attachments/assets/787ec6ae-34dd-48c6-b115-31ac735bed26" />
 
 Essa consulta permite visualizar os produtos cadastrados juntamente com suas principais informações.
 
@@ -340,6 +341,7 @@ O `WHERE` foi utilizado para filtrar somente os registros que atendem à condiç
 ```sql
 SELECT * FROM product WHERE category = 'Vestimenta';
 ```
+<img width="912" height="217" alt="2" src="https://github.com/user-attachments/assets/81b25e3e-4d31-475f-9bd8-6e92e053be49" />
 
 Nesse caso, apenas os produtos cuja categoria seja `Vestimenta` serão retornados.
 
@@ -356,6 +358,7 @@ Foi utilizada uma expressão matemática para criar um atributo derivado chamado
 ```sql
 SELECT idProdStorage, storageLocation, quantity, quantity * 100.00 AS valorEstoque FROM productStorage;
 ```
+<img width="926" height="235" alt="3" src="https://github.com/user-attachments/assets/0ec252ff-de12-4c4e-a04c-46d69f18b660" />
 
 O campo `valorEstoque` não existe fisicamente na tabela. Seu valor é calculado no momento da execução da consulta.
 
@@ -372,6 +375,7 @@ O `ORDER BY` foi utilizado para organizar os resultados de acordo com o valor da
 ```sql
 SELECT * FROM product ORDER BY avaliação DESC;
 ```
+<img width="900" height="209" alt="4" src="https://github.com/user-attachments/assets/d7479393-2e3c-43d9-a650-9dfcaa7f39e0" />
 
 A utilização de `DESC` faz com que os resultados sejam apresentados em ordem decrescente.
 
@@ -386,8 +390,10 @@ A utilização de `DESC` faz com que os resultados sejam apresentados em ordem d
 Nesse caso, foi utilizado o `GROUP BY` para agrupar os produtos por categoria e o `HAVING` para filtrar os grupos.
 
 ```sql
-select Classification as classificacao, COUNT(*) as quantidadeProdutos from product group by Classification_kids HAVING COUNT(*) >= 2;
+select Classification as classificacao, COUNT(*) as quantidadeProdutos from product group by Classification HAVING COUNT(*) >= 2;
 ```
+<img width="918" height="222" alt="5" src="https://github.com/user-attachments/assets/11bc4d9d-de1e-4dbf-9b9d-351ad9ced2f5" />
+
 
 O `HAVING` é utilizado para aplicar condições sobre os grupos gerados pelo `GROUP BY`.
 
@@ -417,6 +423,8 @@ INNER JOIN productOrder AS po
 INNER JOIN product AS p
     ON po.idPOproduct = p.idProduct;
 ```
+<img width="917" height="199" alt="6" src="https://github.com/user-attachments/assets/7677b7a2-4681-4e9c-8e00-e8e1a88f01b6" />
+
 
 Essa consulta combina informações das tabelas `clients`, `orders`, `productOrder` e `product`, permitindo visualizar os dados de forma integrada.
 
